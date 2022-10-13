@@ -1,4 +1,12 @@
-What is the total amount each customer spent at the restaurant?
+### 1. What is the total amount each customer spent at the restaurant?
+
+````sql
+  select s.customer_id , sum(m.price) from sales s
+  join menu m
+  on s.product_id = m.product_id
+  group by s.customer_id;
+````
+___________
 
 select  s.customer_id, sum(m.price) as total
 from dannys_diner.sales s
